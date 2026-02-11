@@ -2056,3 +2056,127 @@ p {
         width: 100%; /* Que los campos ocupen todo el ancho */
     }
 }
+/* =======================================================
+   ESTO HARÁ QUE TU WEB SE VEA PERFECTA EN CELULARES
+   ======================================================= */
+
+@media (max-width: 768px) {
+    /* 1. AJUSTES GENERALES */
+    section {
+        padding: 60px 20px !important; /* Menos espacio a los lados para ganar aire */
+        overflow: hidden; /* Evita que la pantalla se mueva hacia los costados */
+    }
+
+    /* 2. NAVEGACIÓN: Logo al centro y menú más compacto */
+    .nav {
+        padding: 15px 20px !important;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .nav nav {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .nav a {
+        margin-left: 0 !important;
+        font-size: 13px;
+    }
+
+    /* 3. HERO (NO ES SOLO CONTENIDO) */
+    .hero-impact {
+        height: auto !important;
+        min-height: 90vh;
+        padding-top: 120px !important;
+    }
+
+    .hero-center {
+        flex-direction: column !important; /* Foto abajo del texto */
+        text-align: center;
+    }
+
+    .hero-center h1 {
+        font-size: 2.5rem !important; /* Texto más pequeño para que no se corte */
+        line-height: 1;
+        width: 100% !important;
+    }
+
+    .hero-center img {
+        width: 80% !important;
+        max-width: 250px;
+        height: auto !important;
+        margin: 0 auto;
+    }
+
+    /* 4. SECCIÓN BIENVENIDA (MARCAS CON IDENTIDAD) */
+    .welcome-card h2 {
+        font-size: 2rem !important;
+    }
+
+    /* 5. SECCIÓN SOBRE MÍ (IDENTITY) */
+    .about-identity {
+        grid-template-columns: 1fr !important; /* Una sola columna */
+        gap: 30px;
+    }
+
+    .about-title {
+        font-size: 3rem !important;
+    }
+
+    .about-title span {
+        transform: none !important; /* Quita el efecto de lado para que quepa */
+    }
+
+    /* 6. SERVICIOS (LO MÁS IMPORTANTE) */
+    .service-slide {
+        padding: 30px 15px !important;
+        min-height: 400px !important; /* Que no sea tan alta */
+    }
+
+    .service-front h2 {
+        font-size: 2rem !important;
+    }
+
+    /* Cuando se abre el servicio */
+    .service-detail {
+        grid-template-columns: 1fr !important; /* Video arriba, texto abajo */
+        height: auto !important;
+        overflow-y: auto;
+        padding-top: 80px !important;
+    }
+
+    .service-media {
+        width: 100% !important; /* Video a pantalla completa */
+        height: 200px !important;
+    }
+
+    /* 7. PORTFOLIO */
+    .portfolio-row.top, 
+    .portfolio-row.bottom {
+        grid-template-columns: 1fr !important; /* Una imagen debajo de la otra */
+        gap: 10px;
+    }
+
+    .portfolio-item {
+        height: 250px !important; /* Imágenes más bajas para que no sea infinito el scroll */
+    }
+
+    /* 8. TESTIMONIOS Y RESULTADOS */
+    .results-grid, 
+    .testimonials-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* 9. CONTACTO */
+    .contact-wrapper {
+        grid-template-columns: 1fr !important;
+        padding: 0;
+    }
+
+    .contact-info h2 {
+        font-size: 2.5rem !important;
+    }
+}
