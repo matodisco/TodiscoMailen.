@@ -1967,166 +1967,75 @@ p {
   object-fit: cover;
 }
 
-/* --- ESTO VA AL FINAL DE TU STYLE.CSS --- */
-
-@media (max-width: 768px) {
-    /* 1. Ajuste de secciones y navegación */
-    section {
-        padding: 60px 20px; /* Menos espacio a los costados */
-    }
-
-    .nav {
-        padding: 15px 20px;
-    }
-
-    .nav nav {
-        display: none; /* Opcional: oculta el menú si se amontona, o puedes dejarlo si son pocos links */
-    }
-
-    /* 2. HERO: El texto "NO ES SOLO CONTENIDO" */
-    .hero-impact {
-        padding: 100px 20px 40px;
-        height: auto;
-    }
-
-    .hero-center {
-        flex-direction: column; /* Foto arriba o abajo del texto */
-        gap: 30px;
-    }
-
-    .hero-center h1 {
-        font-size: 2.8rem; /* Mucho más chico para que no se rompa */
-        line-height: 1.1;
-        text-align: center;
-    }
-
-    .hero-center img {
-        width: 100%;
-        max-width: 300px; /* Que la foto no sea gigante en el celu */
-        height: auto;
-    }
-
-    /* 3. SERVICIOS: Las tarjetas que se abren */
-    .service-slide {
-        padding: 40px 20px !important;
-    }
-
-    .service-front h2 {
-        font-size: 2.5rem;
-    }
-
-    .service-detail {
-        grid-template-columns: 1fr; /* Una sola columna */
-        gap: 20px;
-    }
-
-    .service-media {
-        width: 100%; /* El video/imagen ocupa todo el ancho */
-        height: auto;
-    }
-
-    /* 4. SOBRE MÍ (Identity) */
-    .about-identity {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .about-title {
-        font-size: 3.5rem;
-    }
-
-    .about-title span {
-        transform: none !important; /* Quita el desplazamiento lateral */
-        display: block;
-    }
-
-    /* 5. PORTFOLIO: Las imágenes de tus trabajos */
-    .portfolio-row.top, 
-    .portfolio-row.bottom {
-        grid-template-columns: 1fr; /* Una foto debajo de otra */
-        gap: 15px;
-    }
-
-    /* 6. FORMULARIO DE CONTACTO */
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-    }
+/* AJUSTE FINAL PARA MÓVIL - COPIAR DESDE AQUÍ */
+@media screen and (max-width: 768px) {
     
-    input, textarea {
-        width: 100%; /* Que los campos ocupen todo el ancho */
-    }
-}
-/* =======================================================
-   ESTO HARÁ QUE TU WEB SE VEA PERFECTA EN CELULARES
-   ======================================================= */
-
-@media (max-width: 768px) {
-    /* 1. SECCIÓN INICIAL (HERO): Hacer la foto más grande */
+    /* 1. SECCIÓN INICIAL (HERO) */
     .hero-impact {
-        padding-top: 100px !important;
+        padding-top: 120px !important;
         height: auto !important;
-        min-height: 80vh;
+        min-height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
     }
 
     .hero-center {
         flex-direction: column !important;
-        gap: 20px !important;
+        text-align: center !important;
+        gap: 30px !important;
     }
 
     .hero-center h1 {
-        font-size: 2.2rem !important; /* Un poco más chico para que no empuje todo abajo */
-        order: 1; /* Texto primero */
+        font-size: 10vw !important; /* Tamaño fluido según el ancho del cel */
+        line-height: 1 !important;
+        margin-bottom: 20px !important;
     }
 
     .hero-center img {
-        width: 100% !important; /* Ocupa todo el ancho disponible */
-        max-width: 320px !important; /* Pero con un límite para que no se pase */
+        width: 85% !important; /* Imagen de inicio más grande y presente */
+        max-width: 350px !important;
         height: auto !important;
-        border-radius: 20px;
-        order: 2; /* Foto debajo del texto */
+        margin: 0 auto !important;
+        display: block !important;
     }
 
-    /* 2. SECCIÓN SOBRE MÍ: Achicar la imagen gigante */
+    /* 2. SECCIÓN SOBRE MÍ (IDENTITY) */
     .about-identity {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr !important; /* Una sola columna */
+        text-align: center !important;
         padding: 40px 20px !important;
-        gap: 20px !important;
     }
 
-    /* Ajuste de la foto de Sobre Mí */
     .about-image {
-        width: 70% !important; /* La achicamos para que no sea gigante */
-        max-width: 250px !important;
-        margin: 0 auto !important; /* La centramos */
-        height: auto !important;
+        width: 60% !important; /* Imagen de sobre mí reducida para que no sea gigante */
+        max-width: 220px !important;
+        margin: 0 auto 30px auto !important;
+        display: block !important;
     }
 
     .about-title {
-        font-size: 2.8rem !important;
-        text-align: center;
+        font-size: 12vw !important;
+        line-height: 1 !important;
     }
 
     .about-title span {
         transform: none !important;
-        display: block;
+        display: block !important;
     }
 
-    .about-role {
-        text-align: center;
-        margin: 10px auto !important;
-        font-size: 15px !important;
+    /* 3. GENERAL: Evitar que el diseño se amontone */
+    section {
+        padding: 80px 20px !important;
     }
 
-    /* 3. SERVICIOS: Ajuste fino para que no se vea amontonado */
-    .service-slide {
-        padding: 30px 15px !important;
+    .nav {
+        padding: 15px 20px !important;
+        justify-content: center !important;
     }
 
-    .service-front h2 {
-        font-size: 1.8rem !important;
-    }
-
-    .service-detail {
-        padding: 80px 20px 20px !important;
+    .nav nav {
+        display: none; /* Opcional: oculta links si se enciman al logo */
     }
 }
+/* TERMINA AQUÍ */
